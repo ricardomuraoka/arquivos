@@ -14,6 +14,7 @@ public class Teste {
 
         folder.addFile(file);
         folder2.addFolder(folder);
+        folder2.addFolder(folder);
         folder.addFile(file2);
         folder.addFile(file3);
         folder.addFile(file3);

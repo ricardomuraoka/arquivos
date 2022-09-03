@@ -16,8 +16,12 @@ public class Folder {
         this.folders = new ArrayList<>();
     }
 
-    public void addFolder(Folder folders) {
-        this.folders.add(folders);
+    public void addFolder(Folder y) {
+        if (folders.contains(y)) {
+            System.out.println("Esta pasta já foi adiconada");
+        } else {
+            this.folders.add(y);
+        }
     }
 
     public void addFile(File x) {
