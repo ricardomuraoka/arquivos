@@ -20,7 +20,13 @@ public class Folder {
         this.folders.add(folders);
     }
 
-    public void addFile(File files) { this.files.add(files); }
+    public void addFile(File x) {
+        if (files.contains(x)) {
+            System.out.println("Esta pasta já possui este arquivo");
+        } else {
+            this.files.add(x);
+        }
+         }
 
     @Override
     public String toString() {

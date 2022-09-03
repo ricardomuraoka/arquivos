@@ -16,6 +16,7 @@ public class Teste {
         folder2.addFolder(folder);
         folder.addFile(file2);
         folder.addFile(file3);
+        folder.addFile(file3);
         System.out.println(folder2);
         System.out.println(folder);
         System.out.println(folder.tamanho());
