@@ -46,6 +46,19 @@ public class Folder {
         return bytes;
     }
 
+    public float tamanhoTotal() {
+        float bytes = 0;
+        for (File h : files) {
+            bytes += h.getBytes();
+        }
+        for (Folder y : folders) {
+            for (File z : files) {
+                bytes += z.getBytes();
+            }
+        }
+        return bytes;
+    }
+
 
     public String getName() {
         return name;

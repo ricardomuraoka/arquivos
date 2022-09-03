@@ -21,7 +21,7 @@ public class Teste {
         System.out.println(folder2);
         System.out.println(folder);
         System.out.println(folder.tamanho());
-        System.out.println(folder2.tamanho());
+        System.out.println(folder2.tamanhoTotal());
     }
 }
 

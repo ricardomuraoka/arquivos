@@ -1,7 +1,7 @@
 package Arquivos;
 
 public class File {
-    private static String nameFile;
+    private String nameFile;
     private String extension;
     private float bytes;
 
@@ -16,7 +16,7 @@ public class File {
         return bytes;
     }
 
-    public static String getNameFile() {
+    public String getNameFile() {
         return nameFile;
     }
 
