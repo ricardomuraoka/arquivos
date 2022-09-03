@@ -26,25 +26,18 @@ public class Folder {
     public String toString() {
         return "A pasta " + name + " possui " + files.size() +
                 " arquivos e " + folders.size() + " pastas ";
-
      }
 
-
-/*
-    @Override
-    public String toString() {
-        return name + " contains " + files.size() + " file(s) and " + folders.size() + " folder(s).";
-    }
- */
-/*
-    public void size() {
-
-        ArrayList<Object> Folder = file.stream()
-                .map(File::getBytes)
-                .collect(Collectors.toCollection(ArrayList::new));
+    public float tamanho() {
+        float bytes = 0;
+        for (int i = 0; i < files.size(); i++) {
+            bytes = 0;
+            bytes += files.get(i).getBytes();
+        }
+        return bytes;
     }
 
- */
+    
 public String getName() {
     return name;
 }
@@ -71,4 +64,3 @@ public String getName() {
 
 
 }
-
