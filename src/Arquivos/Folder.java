@@ -1,12 +1,13 @@
 package Arquivos;
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 public class Folder {
+
+
     private String name;
-    private ArrayList<Object> files;
-    private ArrayList<Object> folders;
+    private ArrayList<File> files;
+    private ArrayList<Folder> folders;
 
 
     public Folder(String name) {
@@ -15,26 +16,50 @@ public class Folder {
         this.folders = new ArrayList<>();
     }
 
-    public void addFolder(Folder folder) {
-        this.folders.add(folder);
+    public void addFolder(Folder folders) {
+        this.folders.add(folders);
     }
 
-    public void addFile(File file) {
-        this.folders.add(file);
-    }
-/*
+    public void addFile(File files) { this.files.add(files); }
+
     @Override
     public String toString() {
-        return name + " contains " + files.size() + " file(s) and " + folders.size() + " folder(s).";
-    }
- */
-/*
-    public void size() {
-
-        ArrayList<Object> Folder = file.stream()
-                .map(File::getBytes)
-                .collect(Collectors.toCollection(ArrayList::new));
+        return "A pasta " + name + " possui " + files.size() +
+                " arquivos e " + folders.size() + " pastas ";
     }
 
- */
+    public float tamanho() {
+        float bytes = 0;
+        for (int i = 0; i < files.size(); i++) {
+            bytes += files.get(i).getBytes();
+        }
+        return bytes;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ArrayList<File> getFiles() {
+        return files;
+    }
+
+    public void setFiles(ArrayList<File> files) {
+        this.files = files;
+    }
+
+    public ArrayList<Folder> getFolders() {
+        return folders;
+    }
+
+    public void setFolders(ArrayList<Folder> folders) {
+        this.folders = folders;
+    }
+
+
 }
