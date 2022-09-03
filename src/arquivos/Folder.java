@@ -1,4 +1,4 @@
-package Arquivos;
+package arquivos;
 
 import java.util.ArrayList;
 
@@ -30,35 +30,65 @@ public class Folder {
         } else {
             this.files.add(x);
         }
-         }
+    }
 
+    public static final String PASTA = "A pasta";
     @Override
     public String toString() {
-        return "A pasta " + name + " possui " + files.size() +
+        return PASTA + " " + name + " possui " + files.size() +
                 " arquivos e " + folders.size() + " pastas ";
     }
 
-    public float tamanho() {
+    public String tamanho() {
         float bytes = 0;
-        for (int i = 0; i < files.size(); i++) {
-            bytes += files.get(i).getBytes();
+        for (File file : files) {
+            bytes += file.getBytes();
+        }
+        return PASTA + " " + name + " possui " + bytes + " bytes";
+    }
+
+    public double tamanhoDouble() {
+        float bytes = 0;
+        for (File file : files) {
+            bytes += file.getBytes();
         }
         return bytes;
     }
 
-    public float tamanhoTotal() {
+
+
+        public String tamanhoTotal() {
         float bytes = 0;
-        for (File h : files) {
-            bytes += h.getBytes();
-        }
-        for (Folder y : folders) {
-            for (File z : files) {
-                bytes += z.getBytes();
+            for (Folder folder : folders) {
+                bytes += folder.tamanhoDouble();
+            }
+        return PASTA + " " + name + " possui " + bytes + " bytes";
+    }
+
+    public void removeFiles(String nomeDoArquivo, ArrayList<Folder> folders) {
+        for (File file : files) {
+            if (nomeDoArquivo == file.getNameFile()) {
+                files.remove(file);
             }
         }
-        return bytes;
+
     }
 
+    public boolean possuiSubpastas() {
+        if (folders.size() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public boolean compareName(String param) {
+        for (File files : files) {
+            if (files.getNameFile() == param);
+        }
+        return true;
+    }
 
     public String getName() {
         return name;
@@ -68,7 +98,7 @@ public class Folder {
         this.name = name;
     }
 
-    public ArrayList<File> getFiles() {
+    public ArrayList<File> getFiles(Folder folder) {
         return files;
     }
 
