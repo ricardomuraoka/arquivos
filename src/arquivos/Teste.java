@@ -22,9 +22,9 @@ public class Teste {
         System.out.println(folder);
         System.out.println(folder.tamanho());
         System.out.println(folder2.tamanhoTotal());
-        folder.removeFiles("Mary",folder2.getFolders());
+        folder2.removeFiles("Mary",folder2.getFolders());
         System.out.println(folder);
-        System.out.println(folder.getFiles(folder));
+        System.out.println(folder.getFiles());
     }
 }
 
